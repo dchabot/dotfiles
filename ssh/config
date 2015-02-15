@@ -1,0 +1,97 @@
+###SSH Port Forwarding Configuration###
+
+####Global Configuration Options###
+
+#Host * will apply to all hosts
+Host *
+	  #Note default is 3
+    ServerAliveCountMax 4
+		#Note default is 0       
+    ServerAliveInterval 15      
+	User dchabot
+	IdentityFile ~/.ssh/id_rsa.pub
+
+####Port Forwarding Directives###
+Host box32-1
+	Hostname box32-1.nsls2.bnl.gov
+	ForwardAgent yes
+
+Host box64-1
+	Hostname box64-1.nsls2.bnl.gov
+	ForwardAgent yes
+
+Host code
+	Hostname code.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10011 localhost:22
+
+Host cagw
+	Hostname cagw01.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10012 localhost:22
+
+Host 23id1-ioc1 
+	Hostname xf23id1-ioc1.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10010 localhost:22
+
+Host 23id1-ioc2 
+	Hostname xf23id1-ioc2.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10020 localhost:4000
+
+Host 23ida-ioc1 
+	Hostname xf23ida-ioc1.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10030 localhost:22
+
+Host 23id-ca
+	Hostname xf23id-ca.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10040 localhost:22
+
+Host 23id1-svr1
+	Hostname xf23id1-svr1.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 4443 localhost:4443
+
+Host 23id1-ws1
+	Hostname xf23id1-ws1.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 4443 localhost:4443
+
+Host 11ida-ioc1
+	Hostname xf11ida-ioc1.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10050 localhost:22
+
+Host 11idb-ioc1 
+	Hostname xf11idb-ioc1.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10060 localhost:22
+
+Host 11id-ws1 
+	Hostname xf11id-ws1.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10070 localhost:22
+
+Host 5id1-ws1
+	Hostname xf05id1-ws1.cs.nsls2.local
+	ForwardAgent yes
+	LocalForward 10080 localhost:22
+
+
+Host 5id1-ws4
+    Hostname xf05id1-ws4.cs.nsls2.local
+    ForwardAgent yes
+    LocalForward 11001 localhost:4000
+
+Host 5ida-ioc1
+    Hostname xf05ida-ioc1.cs.nsls2.local
+    ForwardAgent yes
+    LocalForward 11002 localhost:4000
+
+Host 5idd-ioc1
+    Hostname xf05idd-ioc1.cs.nsls2.local
+    ForwardAgent yes
+    LocalForward 11003 localhost:4000
