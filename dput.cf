@@ -1,0 +1,9 @@
+[DEFAULT]
+default_host_main = rebuildd
+
+[rebuildd]
+method = scp
+fqdn = squeeze.cs.nsls2.local
+login = *
+incoming = /rebuildd/in
+run_dinstall = no
