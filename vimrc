@@ -196,6 +196,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'klen/python-mode'
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'davidhalter/jedi-vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -276,6 +278,32 @@ let g:tmuxline_theme = 'airline_insert'
 " let g:netrw_list_hide.='\.sw[op],'
 " let g:pyflakes_use_quickfix = 0
 " let g:pep8_map='<leader>8'
+
+" Settings for jedi-vim
+" " cd ~/.vim/bundle
+" " git clone git://github.com/davidhalter/jedi-vim.git
+let g:jedi#usages_command = "<leader>z"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+" " Better navigating through omnicomplete option list
+" " See
+" http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
+set completeopt=longest,menuone
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " Python folding
 " mkdir -p ~/.vim/ftplugin
