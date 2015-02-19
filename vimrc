@@ -197,6 +197,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'yssl/QFEnter'
 
 
 " All of your Plugins must be added before the following line
@@ -232,6 +233,11 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
 \ }
+
+" make QFEnter behavior map to the same keys as Ctrl-P
+let g:qfenter_vopen_map = ['<C-v>']
+let g:qfenter_hopen_map = ['<C-CR>', '<C-s>', '<C-x>']
+let g:qfenter_topen_map = ['<C-t>']
 
 " airline plugin config
 set t_Co=256                    " 256-color terminal
