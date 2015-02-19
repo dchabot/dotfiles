@@ -6,7 +6,7 @@
     ~/.hgrc: hgrc
     ~/.gitconfig: gitconfig
     ~/.gbp.conf: gbp.conf
-    ~/.dput.conf: dput.conf
+    ~/.dput.cf: dput.cf
     ~/.vimrc: vimrc
     ~/.vim: vim
     ~/.tmux.conf: tmux.conf
