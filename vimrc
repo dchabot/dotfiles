@@ -50,6 +50,10 @@ set expandtab
 set mouse=a
 set ruler
 set incsearch
+set ignorecase
+set clipboard=unnamed             " use the system clipboard
+set wildmenu                      " enable bash style tab completion
+set wildmode=list:longest,full
 
 " set window navigation commands. Add <C-W>_ to maximize active window (removed).
 " from - http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
@@ -288,7 +292,13 @@ let g:tmuxline_theme = 'airline_insert'
 " Settings for jedi-vim
 " " cd ~/.vim/bundle
 " " git clone git://github.com/davidhalter/jedi-vim.git
-let g:jedi#usages_command = "<leader>z"
+let g:jedi#usages_command = "<Leader>z"
+let g:jedi#goto_assignments_command = "<Leader>g"
+let g:jedi#goto_definitions_command = "<Leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<Leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<Leader>r"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
