@@ -1,3 +1,17 @@
-- clean: []
-- link: {}
-- shell: []
+- clean: ['~']
+- link:
+    ~/.dotfiles: ''
+    ~/.bashrc: bashrc
+    ~/.bash_aliases: bash_aliases
+    ~/.hgrc: hgrc
+    ~/.gitconfig: gitconfig
+    ~/.gbp.conf: gbp.conf
+    ~/.dput.conf: dput.conf
+    ~/.vimrc: vimrc
+    ~/.vim: vim
+    ~/.tmux.conf: tmux.conf
+    ~/.tmuxline.conf: tmuxline.conf
+    ~/.condarc: condarc
+    ~/.ssh: ssh
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
