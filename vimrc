@@ -30,8 +30,8 @@ autocmd! bufwritepost .vimrc source %
 let mapleader = ","
 
 " easier moving between buffers
-map <C-m> :bnext<CR>
-map <C-n> :bprevious<CR>
+map <C-]> :bnext<CR>
+map <C-[> :bprevious<CR>
 
 " Showing line numbers and length
 highlight LineNr ctermfg=grey ctermbg=233
