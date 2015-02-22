@@ -1,14 +1,3 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2000 Oct 14
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -30,8 +19,8 @@ autocmd! bufwritepost .vimrc source %
 let mapleader = ","
 
 " easier moving between buffers
-map <C-]> :bnext<CR>
-map <C-[> :bprevious<CR>
+map <leader>j :bnext<CR>
+map <leader>k :bprevious<CR>
 
 " Showing line numbers and length
 highlight LineNr ctermfg=grey ctermbg=233
@@ -52,8 +41,8 @@ set ruler
 set incsearch
 set ignorecase
 set clipboard=unnamed             " use the system clipboard
-set wildmenu                      " enable bash style tab completion
-set wildmode=list:longest,full
+" set wildmenu                      " enable bash style tab completion
+" set wildmode=list:longest,full
 
 " set window navigation commands. Add <C-W>_ to maximize active window (removed).
 " from - http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
