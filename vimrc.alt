@@ -1,0 +1,268 @@
+" .vimrc
+"
+" Use Vim settings, rather then Vi settings
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" Automatic reloading of .vimrc
+" "augroup reload_vimrc " {
+" "    autocmd!
+" "    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" "augroup END " }
+autocmd! bufwritepost .vimrc source %
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+colorscheme desert
+" change dir to file location
+set acd                " current directory follows file being edited
+set ic                 " case-insensitive search by default
+set guifont=Consolas:h10
+
+set imdisable          " Disable the IME (gvim and unicode don't play well on different locale)
+set guioptions=cmgtTr 
+set autoindent         " always set autoindenting on
+set history=500        " keep x lines of command line history
+set ruler              " show the cursor position all the time
+set showcmd            " display incomplete commands
+set incsearch          " do incremental searching
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Make p in Visual mode replace the selected text with the "" register.
+vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  " filetype plugin indent on
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+endif " has("autocmd")
+
+" set the 'cpoptions' to its Vim default
+if 1    " only do this when compiled with expression evaluation
+  let s:save_cpo = &cpoptions
+endif
+
+" set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
+behave mswin
+
+" backspace and cursor keys wrap to previous/next line
+set backspace=2 whichwrap+=<,>,[,]
+
+" backspace in Visual mode deletes selection
+vnoremap <BS> d
+
+" Alt-Space is System menu
+if has("gui")
+  noremap <M-Space> :simalt ~<CR>
+  inoremap <M-Space> <C-O>:simalt ~<CR>
+  cnoremap <M-Space> <C-C>:simalt ~<CR>
+endif
+
+set tabstop=4 shiftwidth=4 autoindent
+set expandtab          " tabs -> spaces (:retab)
+set smartindent        " smartindent when starting new line
+set foldmethod=indent
+set foldlevel=99
+set vb                 " ** visual bell, no beeping! **
+set nobackup
+set nowritebackup
+set wrap
+
+" Floats -> double
+map <C-F> :s/\([0-9]\)f/\1/ <cr>
+map <C-T> :s/;\s*$// <cr>
+
+" Simplified window motion (ctrl+direction)
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+map <c-=> <c-w>=
+
+" remap arrow keys to open up quickfix
+map <Left> :copen<cr>
+map <Right> :cclose<cr>
+map <Up> :cp<cr>
+map <Down> :cn<cr>
+let mapleader = ","
+
+" Camel case conversion stuff on line
+vnoremap <leader>c :s/\C\%V_\([a-z]\)/\u\1/g<CR>gUl<cr>:nohlsearch<cr>
+vnoremap <leader>u :s/\C\%V\<\@!\([A-Z]\)/\_\l\1/g<CR>gul<CR>:nohlsearch<CR>
+
+map <leader>j :bn<cr>
+map <leader>k :bp<cr>
+
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
+if &diff
+  set diffopt=filler,context:3
+endif
+
+" ----- vundle ------
+" appended for Vundle usage
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+ 
+"" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+"" Plugin 'klen/python-mode'
+Plugin 'bling/vim-airline'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'yssl/QFEnter'
+
+
+"" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+syntax enable
+set background=dark
+colorscheme ir_black
+set number
+set cursorline
+hi CursorLine ctermbg=234
+ 
+" Ctrl-P setup:
+" -> r = nearest ancestor with repo directory
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+ 
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|pyc)$',
+  \ 'link': 'some_bad_symbolic_links',
+\ }
+
+" make QFEnter behavior map to the same keys as Ctrl-P
+let g:qfenter_vopen_map = ['<C-v>']
+let g:qfenter_hopen_map = ['<C-CR>', '<C-s>', '<C-x>']
+let g:qfenter_topen_map = ['<C-t>']
+
+" airline plugin config
+set t_Co=256                    " 256-color terminal
+set encoding=utf-8
+let g:airline_powerline_fonts=0 " if funny symbols show in the status line, set this to 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_inactive_collapse = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:tmuxline_powerline_separators = 0
+set laststatus=2
+
+"""""""""""""""""""""
+"  tmuxline config  "
+"""""""""""""""""""""
+let g:tmuxline_theme = 'airline_insert'
+" let g:tmuxline_preset = {
+"     \ 'a': '#S',
+"     \ 'b': '#F',
+"     \ 'c': '#W',
+"     \ 'win': ['#I', '#W'],
+"     \ 'cwin': ['#I', '#W'],
+"     \ 'x': '%a',
+"     \ 'y': ['%b %d', '%R'],
+"     \ 'z': '#h'}
+
+" -- python mode
+" E501 = line too long, C901 = too complex
+" let g:pymode_indent = 0 " use python-indent not from python-mode
+" autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+"let g:pymode_lint_ignore = "E501,C901"
+
+" disable the 80char vertical line
+" let g:pymode_options_colorcolumn = 0
+" disable code completion
+" let g:pymode_rope_completion = 0
+" highlight LineNr ctermfg=red
+" highlight LineNr guifg=#FF0000
+" let NERDTreeIgnore = ['\.pyc$']
+" let g:netrw_list_hide='.git,'
+" let g:netrw_list_hide.='\.svn,'
+" let g:netrw_list_hide.='\.hg,'
+" let g:netrw_list_hide.='\.py[co],'
+" let g:netrw_list_hide.='\.sw[op],'
+" let g:pyflakes_use_quickfix = 0
+" let g:pep8_map='<leader>8'
+
+" Settings for jedi-vim
+" " cd ~/.vim/bundle
+" " git clone git://github.com/davidhalter/jedi-vim.git
+let g:jedi#usages_command = "<Leader>z"
+let g:jedi#goto_assignments_command = "<Leader>g"
+let g:jedi#goto_definitions_command = "<Leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<Leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<Leader>r"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+" " Better navigating through omnicomplete option list
+" " See
+" http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
+set completeopt=longest,menuone
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+" Python folding
+" mkdir -p ~/.vim/ftplugin
+" wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
+set nofoldenable
