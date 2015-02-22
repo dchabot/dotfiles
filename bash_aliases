@@ -12,5 +12,6 @@ alias vi=/usr/bin/vim
 alias conda=$HOME/anaconda/bin/conda
 alias activate="export PATH=/bin:/usr/bin; source $HOME/anaconda/bin/activate"
 alias grep="grep --color"
+alias outline="grep --color '^class \|def '"
 
 
