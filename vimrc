@@ -39,7 +39,7 @@ set expandtab
 set mouse=a
 set ruler
 set incsearch
-set ignorecase
+set smartcase
 set clipboard=unnamed             " use the system clipboard
 " set wildmenu                      " enable bash style tab completion
 " set wildmode=list:longest,full
