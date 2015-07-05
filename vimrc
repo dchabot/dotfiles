@@ -39,7 +39,7 @@ set expandtab
 set mouse=a
 set ruler
 set incsearch
-set ignorecase
+set smartcase
 
 " from stackoverflow.com/questions/11404800
 if $TMUX == ''
