@@ -14,3 +14,6 @@ alias sa="source $HOME/mc/bin/activate"
 alias sd="source $HOME/mc/bin/deactivate"
 alias grep="grep --color"
 alias outline="grep --color '^class \|def '"
+alias sa='source $HOME/mc/bin/activate'
+alias sd='source $HOME/mc/bin/deactivate'
+alias conda='$HOME/mc/bin/conda'
