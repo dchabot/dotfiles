@@ -100,6 +100,7 @@ fi
 
 export PS1='\e[32;1m(\w)\e[0m\n\u@\h--> '
 export PATH="$HOME/opt/rtems/bin:$PATH:/sbin:/usr/sbin:/usr/lib/epics/bin/linux-x86_64:~/bin"
+export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
 export http_proxy="http://proxy:8888"
 export https_proxy="http://proxy:8888"
