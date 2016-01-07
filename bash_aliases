@@ -9,9 +9,8 @@ alias firefox=$HOME/firefox/firefox
 alias vi=/usr/bin/vim
 #alias css=$HOME/css-nsls2/css-nsls2
 #alias ipython='ipython --logappend=/home/dchabot/.ipython/profile_default/log/log.py'
-alias conda=$HOME/anaconda/bin/conda
-alias activate="export PATH=/bin:/usr/bin; source $HOME/anaconda/bin/activate"
+alias conda=$HOME/mc/bin/conda
+alias sa="source $HOME/mc/bin/activate"
+alias sd="source $HOME/mc/bin/deactivate"
 alias grep="grep --color"
 alias outline="grep --color '^class \|def '"
-
-
