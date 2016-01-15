@@ -4,8 +4,8 @@ username = dchabot <dchabot@bnl.gov>
 # default editor on Debian is nano :-(
 editor = vim
 
-[http_proxy]
-host = proxy:8888
+#[http_proxy]
+#host = proxy:8888
 
 [alias]
 id = id -ivnb

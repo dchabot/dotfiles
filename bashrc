@@ -99,17 +99,25 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export PS1='\e[32;1m(\w)\e[0m\n\u@\h--> '
-export PATH="$HOME/opt/rtems/bin:$PATH:/sbin:/usr/sbin:/usr/lib/epics/bin/linux-x86_64:~/bin"
-export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
+export PATH="/usr/local/bin:$PATH:/sbin:/usr/sbin:~/bin:/opt/epics/base/bin/darwin-x86"
+# so pyepics, etc can find its libs without mucking with DYLD_LIBRARY_PATH
+export PATH="$PATH:/opt/epics/base/lib/darwin-x86"
+PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
-export http_proxy="http://proxy:8888"
-export https_proxy="http://proxy:8888"
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+#export http_proxy="http://proxy:8888"
+#export https_proxy="http://proxy:8888"
 
 # EPICS
 export EPICS_CA_AUTO_ADDR_LIST=NO
-export EPICS_CA_ADDR_LIST="`python $HOME/bin/get_ca_bcast_addr.py`"
+#export EPICS_CA_ADDR_LIST="`python $HOME/bin/get_ca_bcast_addr.py`"
+export EPICS_CA_ADDR_LIST=127.0.0.1
 export EPICS_CA_MAX_ARRAY_BYTES=20000000
 
+export LSCOLORS="EaGaxaxaCaFaFaxaxaxaxa"
 #export PAGER="/usr/bin/less"
 #export LESS='-FSRX' #give 'less' some smarts...
 export EDITOR="/usr/bin/vim"
