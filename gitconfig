@@ -7,11 +7,16 @@
 
 [color]
 	ui = auto
+
 [core]
 	editor = /usr/bin/vim
+
 [alias]
 	co = checkout
 	ci = commit
 	stat = status
 	st = status
     glog = log --graph --all
+
+[push]
+	default = simple
