@@ -17,6 +17,3 @@
 	stat = status
 	st = status
     glog = log --graph --all
-
-[push]
-	default = simple
