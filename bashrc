@@ -113,6 +113,8 @@ export EPICS_CA_MAX_ARRAY_BYTES=20000000
 #export PAGER="/usr/bin/less"
 #export LESS='-FSRX' #give 'less' some smarts...
 export EDITOR="/usr/bin/vim"
+# activate 'vi' mode
+set -o vi
 
 function tmux() {
     # update-env command addition from:
