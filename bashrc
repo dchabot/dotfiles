@@ -121,6 +121,8 @@ export LSCOLORS="EaGaxaxaCaFaFaxaxaxaxa"
 #export PAGER="/usr/bin/less"
 #export LESS='-FSRX' #give 'less' some smarts...
 export EDITOR="/usr/bin/vim"
+# activate 'vi' mode
+set -o vi
 
 function tmux() {
     # update-env command addition from:
