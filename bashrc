@@ -99,11 +99,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export PS1='\e[32;1m(\w)\e[0m\n\u@\h--> '
-export PATH="$HOME/opt/rtems/bin:$PATH:/sbin:/usr/sbin:/usr/lib/epics/bin/linux-x86_64:~/bin"
 export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
+
+export PATH="$PATH:/usr/lib/epics/bin/linux-x86_64"
+# linuxbrew
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 export http_proxy="http://proxy:8888"
 export https_proxy="http://proxy:8888"
+export no_proxy="10.0.0.0/24,localhost,127.0.0.1"
 
 # EPICS
 export EPICS_CA_AUTO_ADDR_LIST=NO
