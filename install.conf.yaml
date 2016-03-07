@@ -14,5 +14,6 @@
     ~/.condarc: condarc
     ~/.ssh: ssh
     ~/.linuxbrew: /nfs/dchabot/.linuxbrew
+    ~/mc: /nfs/dchabot/mc
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
