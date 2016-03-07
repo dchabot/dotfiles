@@ -12,6 +12,5 @@
     ~/.condarc: condarc
     ~/.ssh: ssh
     ~/.config: config
-    ~/.config/nvim: vim
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
