@@ -97,24 +97,28 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+let g:python3_host_prog = '/home/dchabot/mc/envs/py3/bin/python'
+" let g:python_host_prog = '/usr/bin/python'
+
 " appended for Vundle usage
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin()
  
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-" Plugin 'klen/python-mode'
-Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'yssl/QFEnter'
+" Plugin 'gmarik/Vundle.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'christoomey/vim-tmux-navigator'
+" Plug 'klen/python-mode'
+Plug 'bling/vim-airline'
+Plug 'edkolev/tmuxline.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'yssl/QFEnter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -140,7 +144,7 @@ hi CursorLine ctermbg=234
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
- 
+
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll|pyc)$',
@@ -202,6 +206,7 @@ let g:tmuxline_theme = 'airline_insert'
 " " cd ~/.vim/bundle
 " " git clone git://github.com/davidhalter/jedi-vim.git
 " let g:jedi#auto_initialization = 0
+let g:jedi#force_py_version = 3
 let g:jedi#usages_command = "<Leader>z"
 let g:jedi#goto_assignments_command = "<Leader>g"
 let g:jedi#goto_definitions_command = "<Leader>d"
