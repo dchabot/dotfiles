@@ -16,6 +16,5 @@
     ~/.linuxbrew: /nfs/dchabot/.linuxbrew
     ~/mc: /nfs/dchabot/mc
     ~/.config: config
-    ~/.config/nvim: vim
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
