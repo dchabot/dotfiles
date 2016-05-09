@@ -99,9 +99,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export PS1='\e[32;1m(\w)\e[0m\n\u@\h--> '
-export PATH="/usr/local/bin:$PATH:/sbin:/usr/sbin:~/bin:/opt/epics/base/bin/darwin-x86"
+export PATH="/usr/local/bin:$PATH"
 # so pyepics, etc can find its libs without mucking with DYLD_LIBRARY_PATH
-export PATH="$PATH:/opt/epics/base/lib/darwin-x86"
+export PATH="$PATH:~/bin:/opt/epics/base/bin/darwin-x86:/opt/epics/base/lib/darwin-x86"
 PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
