@@ -11,6 +11,7 @@
     ~/.tmuxline.conf: tmuxline.conf
     ~/.condarc: condarc
     ~/.ssh: ssh
-    ~/.config: config
+    ~/.config/nvim: ~/.vim
+    ~/.config/nvim/init.vim: ~/.vimrc
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
