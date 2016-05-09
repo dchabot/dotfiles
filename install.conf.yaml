@@ -2,6 +2,7 @@
 - link:
     ~/.dotfiles: ''
     ~/.bashrc: bashrc
+    ~/.bash_profile: bash_profile
     ~/.bash_aliases: bash_aliases
     ~/.hgrc: hgrc
     ~/.gitconfig: gitconfig
