@@ -97,7 +97,7 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-let g:python3_host_prog = '/home/dchabot/mc/envs/py3/bin/python'
+let g:python3_host_prog = '/Users/chabot/mc/bin/python'
 " let g:python_host_prog = '/usr/bin/python'
 
 " appended for Vundle usage
