@@ -9,9 +9,6 @@
     ~/.vim: vim
     ~/.tmux.conf: tmux.conf
     ~/.tmuxline.conf: tmuxline.conf
-    ~/.condarc: condarc
     ~/.ssh: ssh
-    ~/.config/nvim: ~/.vim
-    ~/.config/nvim/init.vim: ~/.vimrc
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    ~/.config/nvim: vim
+- shell: []
