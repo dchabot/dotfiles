@@ -147,3 +147,5 @@ function tmux() {
             ;;
     esac
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
