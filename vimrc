@@ -110,7 +110,7 @@ call plug#begin()
 Plug 'kien/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'klen/python-mode'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'davidhalter/jedi-vim'
@@ -159,13 +159,13 @@ let g:qfenter_topen_map = ['<C-t>']
 
 " airline plugin config
 set t_Co=256                    " 256-color terminal
-set encoding=utf-8
-let g:airline_powerline_fonts=0 " if funny symbols show in the status line, set this to 0
+" set encoding=utf-8
+let g:airline_powerline_fonts=1 " if funny symbols show in the status line, set this to 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_inactive_collapse = 1
+" let g:airline_inactive_collapse = 1
 " let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:tmuxline_powerline_separators = 0
+" let g:tmuxline_powerline_separators = 1
 set laststatus=2
 
 """""""""""""""""""""
