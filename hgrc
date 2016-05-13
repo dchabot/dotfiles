@@ -1,8 +1,8 @@
 # Mercurial (aka hg) config file...
 [ui]
-username = dchabot <dchabot@bnl.gov>
+username = chabot <chabot@frib.msu.edu>
 # default editor on Debian is nano :-(
-editor = vim
+editor = nvim
 
 #[http_proxy]
 #host = proxy:8888
@@ -12,7 +12,6 @@ id = id -ivnb
 
 [extensions]
 #hgext.shelve = 
-#forest = /home/dchabot/tmp/hgforest/forest.py
 #hgext.convert = 
 #hgext.glog = 
 hgext.pager = 
