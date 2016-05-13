@@ -13,8 +13,5 @@
     ~/.tmuxline.conf: tmuxline.conf
     ~/.condarc: condarc
     ~/.ssh: ssh
-    ~/.linuxbrew: /nfs/dchabot/.linuxbrew
-    ~/mc: /nfs/dchabot/mc
-    ~/.config: config
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    ~/.config/nvim: vim
+- shell: []
