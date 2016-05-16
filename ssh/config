@@ -14,11 +14,32 @@ Host *
 ####Port Forwarding Directives###
 
 ### Note: "ssh" will cause DNS lookups to "ssh.bnl.gov" or "ssh.sec.bnl.local", depending on interface
-Host ssh
+# Obviously, does not apply for msu access
+Host gw1
     HostName nsclgw1.nscl.msu.edu
 
 Host dev2
-    Hostname dev02-hlc.nscl.msu.edu
+    HostName dev02-hlc.nscl.msu.edu
     ForwardAgent yes
-    ProxyCommand ssh -qY ssh -W %h:%p
+    ProxyCommand ssh -qY gw1 -W %h:%p
     LocalForward 10201 localhost:4000
+
+Host nscl-deb
+    HostName nsclgw1.nscl.msu.edu
+    ForwardAgent yes
+    LocalForward localhost:10202 nsclmirror.nscl.msu.edu:80
+
+Host cts-deb
+    HostName nsclgw1.nscl.msu.edu
+    ForwardAgent yes
+    LocalForward localhost:10203 apt.hlc.nscl.msu.edu:80
+
+Host ci-deb
+    HostName nsclgw1.nscl.msu.edu
+    ForwardAgent yes
+    LocalForward localhost:10204 ci.frib.msu.edu:80
+
+Host jenkins4
+    HostName nsclgw1.nscl.msu.edu
+    ForwardAgent yes
+    LocalForward localhost:10205 jenkins4.nscl.msu.edu:80
