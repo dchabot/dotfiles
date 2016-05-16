@@ -107,10 +107,6 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
-export http_proxy="http://proxy:8888"
-export https_proxy="http://proxy:8888"
-export no_proxy="10.0.0.0/24,localhost,127.0.0.1"
-
 # EPICS
 export EPICS_CA_AUTO_ADDR_LIST=NO
 export EPICS_CA_ADDR_LIST="`python $HOME/bin/get_ca_bcast_addr.py`"
