@@ -101,7 +101,7 @@ fi
 export PS1='\e[32;1m(\w)\e[0m\n\u@\h--> '
 export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
-export PATH="$PATH:/usr/lib/epics/bin/linux-x86_64"
+export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/lib/epics/bin/linux-x86_64"
 # linuxbrew
 #export PATH="$HOME/.linuxbrew/bin:$PATH"
 #export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
