@@ -135,7 +135,7 @@ filetype plugin indent on    " required
 
 syntax enable
 set background=dark
-colorscheme ir_black
+colorscheme desert
 set number
 set cursorline
 hi CursorLine ctermbg=234
