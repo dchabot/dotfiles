@@ -37,7 +37,7 @@ Host cts-deb
 Host ci-deb
     HostName nsclgw1.nscl.msu.edu
     ForwardAgent yes
-    LocalForward localhost:10204 ci.frib.msu.edu:80
+    LocalForward localhost:10204 ci.frib.msu.edu:443
 
 Host jenkins4
     HostName nsclgw1.nscl.msu.edu
