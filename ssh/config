@@ -36,6 +36,24 @@ Host stdioclog
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10003 localhost:4000
 
+Host mc0
+    HostName feioc-mc0.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10004 localhost:4000
+
+Host mc1
+    HostName feioc-mc1.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10005 localhost:4000
+
+Host hlc
+    HostName feioc-hlc.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10006 localhost:4000
+
 Host dev2
     HostName dev02-hlc.nscl.msu.edu
     ForwardAgent yes
