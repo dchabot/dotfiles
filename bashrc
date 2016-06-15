@@ -3,7 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+#[ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -98,7 +98,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PS1='\e[32;1m(\w)\e[0m\n\u@\h--> '
+PS1='\n\e[01;37m\]╭─ [\e[01;32m\]\u@\h\e[01;37m\]]:[\[\e[01;34m\]\w\e[01;37m\]]
+╰─>  \e[00m\]'
 export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
 export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/lib/epics/bin/linux-x86_64"
@@ -148,3 +149,4 @@ function tmux() {
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export LC_ALL='en_US.utf8'
