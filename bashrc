@@ -114,8 +114,8 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 export EPICS_CA_MAX_ARRAY_BYTES=20000000
 
 # FRIB CTS proxies
-export http_proxy=http://webproxy.cts:3128
-export https_proxy=https://webproxy.cts:3128
+# export http_proxy=http://webproxy.cts:3128
+# export https_proxy=https://webproxy.cts:3128
 
 #export PAGER="/usr/bin/less"
 #export LESS='-FSRX' #give 'less' some smarts...
