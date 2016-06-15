@@ -98,7 +98,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PS1='\e[32;1m(\w)\e[0m\n\u@\h--> '
+PS1='\e[01;37m\]╭─ [\e[01;32m\]\u@\h\e[01;37m\]]:[\[\e[01;34m\]\w\e[01;37m\]]
+╰─>\e[00m\]  '
 export PATH="/usr/local/bin:$PATH"
 # so pyepics, etc can find its libs without mucking with DYLD_LIBRARY_PATH
 export PATH="$PATH:~/bin:/opt/epics/base/bin/darwin-x86:/opt/epics/base/lib/darwin-x86"
