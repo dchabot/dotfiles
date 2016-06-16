@@ -161,6 +161,7 @@ let g:qfenter_topen_map = ['<C-t>']
 " airline plugin config
 set t_Co=256                    " 256-color terminal
 set encoding=utf-8
+<<<<<<< HEAD
 let g:airline_theme='term'
 let g:airline_powerline_fonts=1 " if funny symbols show in the status line, set this to 0
 let g:airline#extensions#tabline#enabled = 1
