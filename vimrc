@@ -136,7 +136,7 @@ filetype plugin indent on    " required
 
 syntax enable
 set background=dark
-colorscheme desert
+colorscheme ir_black
 set number
 set cursorline
 hi CursorLine ctermbg=234
@@ -161,6 +161,7 @@ let g:qfenter_topen_map = ['<C-t>']
 " airline plugin config
 set t_Co=256                    " 256-color terminal
 set encoding=utf-8
+let g:airline_theme='term'
 let g:airline_powerline_fonts=1 " if funny symbols show in the status line, set this to 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
