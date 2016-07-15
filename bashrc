@@ -118,6 +118,10 @@ export EPICS_CA_MAX_ARRAY_BYTES=20000000
 export http_proxy=http://webproxy.cts:3128
 export https_proxy=https://webproxy.cts:3128
 
+# debian packaging nicities
+export DEBFULLNAME='Daron Chabot'
+export DEBEMAIL='chabot@frib.msu.edu'
+
 #export PAGER="/usr/bin/less"
 #export LESS='-FSRX' #give 'less' some smarts...
 export EDITOR="/usr/bin/vim"
