@@ -4,30 +4,3 @@
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
-[submodule "vim/plugged/ctrlp.vim"]
-	path = vim/plugged/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/plugged/vim-tmux-navigator"]
-	path = vim/plugged/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule "vim/plugged/vim-airline"]
-	path = vim/plugged/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/plugged/vim-airline-themes"]
-	path = vim/plugged/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/plugged/tmuxline.vim"]
-	path = vim/plugged/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim.git
-[submodule "vim/plugged/jedi-vim"]
-	path = vim/plugged/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "vim/plugged/QFEnter"]
-	path = vim/plugged/QFEnter
-	url = https://github.com/yssl/QFEnter.git
-[submodule "vim/plugged/vim-fugitive"]
-	path = vim/plugged/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/plugged/vim-puppet"]
-	path = vim/plugged/vim-puppet
-	url = https://github.com/rodjek/vim-puppet.git
