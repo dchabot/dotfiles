@@ -21,4 +21,5 @@
     ~/.config/nvim: vim
         
 - shell:
-    ["cd fonts && ./install.sh"]
+    - git submodule update --init --recursive fonts
+    - cd fonts && ./install.sh
