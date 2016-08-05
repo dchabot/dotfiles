@@ -1,4 +1,10 @@
-- clean: ['~']
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
+  
 - link:
     ~/.dotfiles: ''
     ~/.bashrc: bashrc
@@ -13,4 +19,6 @@
     ~/.tmuxline.conf: tmuxline.conf
     ~/.ssh: ssh
     ~/.config/nvim: vim
-- shell: []
+        
+- shell:
+    ["cd fonts && ./install.sh"]
