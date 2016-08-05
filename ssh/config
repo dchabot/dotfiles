@@ -18,6 +18,30 @@ Host *
 Host gw1
     HostName nsclgw1.nscl.msu.edu
 
+Host ctsgw
+    HostName ctsgw.frib.msu.edu
+    ForwardAgent yes
+    ProxyCommand ssh -qY gw1 -W %h:%p
+    LocalForward 10001 localhost:4000
+
+Host stdioc
+    HostName stdioc.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10002 localhost:4000
+
+Host stdioclog
+    HostName stdioclog.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10003 localhost:4000
+
+Host fe-isrc1-ioc
+    HostName fe-isrc1-ioc.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10004 localhost:4000
+
 Host dev2
     HostName dev02-hlc.nscl.msu.edu
     ForwardAgent yes
@@ -37,7 +61,7 @@ Host cts-deb
 Host ci-deb
     HostName nsclgw1.nscl.msu.edu
     ForwardAgent yes
-    LocalForward localhost:10204 ci.frib.msu.edu:80
+    LocalForward localhost:10204 ci.frib.msu.edu:443
 
 Host jenkins4
     HostName nsclgw1.nscl.msu.edu

@@ -118,6 +118,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'yssl/QFEnter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-fugitive'
+Plug 'rodjek/vim-puppet'
 
 
 " All of your Plugins must be added before the following line
