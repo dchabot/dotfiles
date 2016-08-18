@@ -15,6 +15,7 @@
     ~/.dput.cf: dput.cf
     ~/.vimrc: vimrc
     ~/.vim: vim
+    ~/.tmux: tmux
     ~/.tmux.conf: tmux.conf
     ~/.tmuxline.conf: tmuxline.conf
     ~/.ssh: ssh
@@ -23,3 +24,5 @@
 - shell:
     - git submodule update --init --recursive fonts
     - cd fonts && ./install.sh
+    - git submodule update --init --recursive tmux/plugins/tpm
+    - tmux source ~/.tmux.conf
