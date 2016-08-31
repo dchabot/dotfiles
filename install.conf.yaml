@@ -20,9 +20,11 @@
     ~/.tmuxline.conf: tmuxline.conf
     ~/.ssh: ssh
     ~/.config/nvim: vim
+    ~/.linuxbrew: linuxbrew
         
 - shell:
     - git submodule update --init --recursive fonts
     - cd fonts && ./install.sh
     - git submodule update --init --recursive tmux/plugins/tpm
     - tmux source ~/.tmux.conf
+    - git submodule update --init --recursive linuxbrew
