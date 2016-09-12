@@ -36,23 +36,17 @@ Host stdioclog
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10003 localhost:4000
 
-Host mc0
-    HostName feioc-mc0.cts
+Host fe-isrc1-ioc
+    HostName fe-isrc1-ioc.cts
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10004 localhost:4000
 
-Host mc1
-    HostName feioc-mc1.cts
+Host chabot
+    HostName chabot.cts
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10005 localhost:4000
-
-Host hlc
-    HostName feioc-hlc.cts
-    ForwardAgent yes
-    ProxyCommand ssh -qY ctsgw -W %h:%p
-    LocalForward 10006 localhost:4000
 
 Host dev2
     HostName dev02-hlc.nscl.msu.edu
@@ -73,7 +67,7 @@ Host cts-deb
 Host ci-deb
     HostName nsclgw1.nscl.msu.edu
     ForwardAgent yes
-    LocalForward localhost:10204 ci.frib.msu.edu:80
+    LocalForward localhost:10204 ci.frib.msu.edu:443
 
 Host jenkins4
     HostName nsclgw1.nscl.msu.edu
