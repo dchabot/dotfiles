@@ -40,6 +40,7 @@ set mouse=a
 set ruler
 set incsearch
 set ignorecase
+set smartcase
 
 " from stackoverflow.com/questions/11404800
 if $TMUX == ''
@@ -98,7 +99,6 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 let g:python3_host_prog = '/Users/chabot/mc/bin/python'
-" let g:python_host_prog = '/usr/bin/python'
 
 " appended for Vundle usage
 " set the runtime path to include Vundle and initialize
@@ -117,6 +117,8 @@ Plug 'davidhalter/jedi-vim'
 Plug 'yssl/QFEnter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-fugitive'
+Plug 'rodjek/vim-puppet'
+Plug 'tpope/vim-surround'
 
 
 " All of your Plugins must be added before the following line
@@ -165,7 +167,8 @@ let g:airline_theme='term'
 let g:airline_powerline_fonts=1 " if funny symbols show in the status line, set this to 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
-"let g:airline#extensions#whitespace#show_message = 1
+" don't overwrite tmuxline status-line settings
+let g:airline#extensions#tmuxline#enabled = 0
 set laststatus=2
 
 """""""""""""""""""""
