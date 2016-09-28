@@ -142,7 +142,7 @@ set background=dark
 colorscheme ir_black
 set number
 set cursorline
-hi CursorLine ctermbg=234
+hi CursorLine ctermbg=236
  
 " Ctrl-P setup:
 " -> r = nearest ancestor with repo directory
