@@ -48,6 +48,36 @@ Host chabot
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10005 localhost:4000
 
+Host fe-scs1-ioc
+    HostName fe-scs1-ioc.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10006 localhost:4000
+
+Host fe-lebt-ioc
+    HostName fe-lebt-ioc.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10007 localhost:4000
+
+Host fe-rfq-ioc
+    HostName fe-rfq-ioc.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10008 localhost:4000
+
+Host fe-mebt-ioc
+    HostName fe-mebt-ioc.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10009 localhost:4000
+
+Host csstudio
+    HostName csstudio.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10010 localhost:22
+
 Host dev2
     HostName dev02-hlc.nscl.msu.edu
     ForwardAgent yes
