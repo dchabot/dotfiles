@@ -1,3 +1,4 @@
+# pilfered from here - https://github.com/neovim/neovim/issues/1670#issuecomment-67423125
 fel () {
         local file lineno filename
         file=$(grep -r -n -H --line-buffered --color=never --exclude-dir='.git' "" * | \
