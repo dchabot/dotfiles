@@ -147,6 +147,8 @@ hi CursorLine ctermbg=236
 " Ctrl-P setup:
 " -> r = nearest ancestor with repo directory
 let g:ctrlp_working_path_mode = 'ra'
+" use ctrl-z to select multiple files, ctrl-o to open all in 'hidden' buffers
+let g:ctrlp_open_multiple_files = 'i'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
