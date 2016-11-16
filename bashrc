@@ -171,3 +171,7 @@ fel () {
         filename=$(echo "$file" | cut -d":" -f1)
         [ -n "$file" ] && ${EDITOR:-vim} +$lineno $filename
 }
+
+vgrep () {
+    vim -q <(grep -RnH --exclude-dir=".git" $1 $2) +cw
+}
