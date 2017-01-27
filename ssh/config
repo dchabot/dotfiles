@@ -9,6 +9,8 @@ Host *
 		#Note default is 0       
     ServerAliveInterval 15      
     User chabot
+    UseKeychain yes
+    AddKeysToAgent yes
     IdentityFile ~/.ssh/id_rsa_imak
 
 ####Port Forwarding Directives###
