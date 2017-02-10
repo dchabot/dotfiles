@@ -9,7 +9,7 @@ Host *
 		#Note default is 0       
     ServerAliveInterval 15      
     User chabot
-    IdentityFile ~/.ssh/id_rsa_jessie_vbox
+    IdentityFile ~/.ssh/id_rsa
 
 ####Port Forwarding Directives###
 
