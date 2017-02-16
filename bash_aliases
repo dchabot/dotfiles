@@ -5,6 +5,7 @@ alias ls='ls --color'
 alias la="ls -a"
 alias ll="ls -l"
 alias vi=/usr/bin/vim
+alias vim="$HOME/.linuxbrew/bin/nvim"
 alias grep="grep --color"
 alias outline="grep --color '^class \|def '"
 alias sa='source $HOME/mc/bin/activate'
