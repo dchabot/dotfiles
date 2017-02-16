@@ -1,1 +1,1 @@
-/home/dchabot/.vimrc
+../vimrc
