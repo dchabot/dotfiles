@@ -103,6 +103,11 @@ PS1='\n\[\e[01;37m\]╭─ [\[\e[01;32m\]\u@\h\[\e[01;37m\]]:[\[\e[01;34m\]\w\[\
 export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
 export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/lib/epics/bin/linux-x86_64"
+# channelfinder, java crud
+export PATH="$PATH:$HOME/jdk1.8.0_121/bin:$HOME/elasticsearch-1.7.5/bin:$HOME/glassfish4/bin"
+export PATH="$PATH:$HOME/apache-maven-3.3.9/bin"
+export JAVA_HOME="$HOME/jdk1.8.0_121"
+
 # linuxbrew
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
