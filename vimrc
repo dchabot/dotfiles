@@ -116,6 +116,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'yssl/QFEnter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim',
 Plug 'tpope/vim-fugitive'
 Plug 'rodjek/vim-puppet'
 Plug 'tpope/vim-surround'
