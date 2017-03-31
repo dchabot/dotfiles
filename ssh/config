@@ -23,6 +23,7 @@ Host ctsgw
 
 Host vbox
     Hostname localhost
+    ForwardAgent yes
     User dc
     Port 2222
 
