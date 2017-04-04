@@ -209,6 +209,7 @@ let g:tmuxline_theme = 'airline_insert'
 " let g:pyflakes_use_quickfix = 0
 " let g:pep8_map='<leader>8'
 
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 nnoremap <leader>f :FZF<cr>
 
 " Augmenting Ag command using fzf#vim#with_preview function
