@@ -21,6 +21,7 @@ let mapleader = ","
 " easier moving between buffers
 map <leader>j :bnext<CR>
 map <leader>k :bprevious<CR>
+nmap <leader>. :b#<CR>
 
 " Showing line numbers and length
 highlight LineNr ctermfg=grey ctermbg=233
