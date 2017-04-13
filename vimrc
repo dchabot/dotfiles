@@ -187,40 +187,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tmuxline#enabled = 0
 set laststatus=2
 
-"""""""""""""""""""""
-"  tmuxline config  "
-"""""""""""""""""""""
 let g:tmuxline_theme = 'airline_insert'
-" let g:tmuxline_preset = {
-"     \ 'a': '#S',
-"     \ 'b': '#F',
-"     \ 'c': '#W',
-"     \ 'win': ['#I', '#W'],
-"     \ 'cwin': ['#I', '#W'],
-"     \ 'x': '%a',
-"     \ 'y': ['%b %d', '%R'],
-"     \ 'z': '#h'}
-
-" -- python mode
-" E501 = line too long, C901 = too complex
-" let g:pymode_indent = 0 " use python-indent not from python-mode
-" autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-"let g:pymode_lint_ignore = "E501,C901"
-
-" disable the 80char vertical line
-" let g:pymode_options_colorcolumn = 0
-" disable code completion
-" let g:pymode_rope_completion = 0
-" highlight LineNr ctermfg=red
-" highlight LineNr guifg=#FF0000
-" let NERDTreeIgnore = ['\.pyc$']
-" let g:netrw_list_hide='.git,'
-" let g:netrw_list_hide.='\.svn,'
-" let g:netrw_list_hide.='\.hg,'
-" let g:netrw_list_hide.='\.py[co],'
-" let g:netrw_list_hide.='\.sw[op],'
-" let g:pyflakes_use_quickfix = 0
-" let g:pep8_map='<leader>8'
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 nnoremap <leader>f :FZF<cr>
