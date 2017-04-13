@@ -249,11 +249,10 @@ nnoremap <leader>/ :Ag<cr>
 " " git clone git://github.com/davidhalter/jedi-vim.git
 " let g:jedi#auto_initialization = 0
 " let g:jedi#force_py_version = 3
-let g:jedi#usages_command = "<Leader>z"
 let g:jedi#goto_assignments_command = "<Leader>g"
 let g:jedi#goto_definitions_command = "<Leader>d"
 let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<Leader>n"
+let g:jedi#usages_command = "<Leader>u"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<Leader>r"
 " let g:jedi#completions_enabled = 0
