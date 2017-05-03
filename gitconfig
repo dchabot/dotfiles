@@ -1,25 +1,26 @@
 [user]
-	name = Daron Chabot 
-	email = chabot@frib.msu.edu
+    name = Daron Chabot 
+    email = chabot@frib.msu.edu
 
 [apply]
-	whitespace = nowarn
+    whitespace = nowarn
 
 [color]
-	ui = auto
+    ui = auto
 
 [core]
-	editor = /usr/bin/vim
+    editor = /usr/bin/vim
 
 [alias]
-	co = checkout
-	ci = commit
-	stat = status
-	st = status
+    co = checkout
+    ci = commit
+    stat = status
+    st = status
     sts = status -s
     glog = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%n%C(reset)' --all
+    blog = log --oneline -n10
     br = branch
     rem = remote -v
 
 [push]
-	default = simple
+    default = simple
