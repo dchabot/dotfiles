@@ -9,20 +9,15 @@ Host *
 		#Note default is 0       
     ServerAliveInterval 15      
     User chabot
-    IdentityFile ~/.ssh/id_rsa
+    IdentityFile ~/.ssh/id_rsa_jessie_vbox
 
 ####Port Forwarding Directives###
 
 ### Note: "ssh" will cause DNS lookups to "ssh.bnl.gov" or "ssh.sec.bnl.local", depending on interface
 # Obviously, does not apply for msu access
-Host gw1
-    HostName nsclgw1.nscl.msu.edu
-
 Host ctsgw
     HostName ctsgw.frib.msu.edu
     ForwardAgent yes
-    ProxyCommand ssh -qY gw1 -W %h:%p
-    LocalForward 10001 localhost:4000
 
 Host stdioc
     HostName stdioc.cts
@@ -90,10 +85,16 @@ Host fpsioc
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10012 localhost:4000
 
+Host chopper-mon
+    HostName  chopper-mon.cts
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10013 localhost:4000
+
 Host dev2
     HostName dev02-hlc.nscl.msu.edu
     ForwardAgent yes
-    ProxyCommand ssh -qY gw1 -W %h:%p
+    ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10201 localhost:4000
 
 Host nscl-deb
