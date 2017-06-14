@@ -104,7 +104,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
 export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/lib/epics/bin/linux-x86_64"
 # channelfinder, java crud
-export PATH="$PATH:$HOME/java/bin:$HOME/elasticsearch-1.7.5/bin:$HOME/glassfish4/bin"
+export PATH="$HOME/java/bin:$PATH:$HOME/elasticsearch-1.7.5/bin:$HOME/glassfish4/bin"
 export PATH="$PATH:$HOME/apache-maven-3.3.9/bin"
 export JAVA_HOME="$HOME/java"
 
