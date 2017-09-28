@@ -98,8 +98,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PS1='\n\[\e[01;37m\]╭─ [\[\e[01;32m\]\u@\h\[\e[01;37m\]]:[\[\e[01;34m\]\w\[\e[01;37m\]]
-╰─>  \[\e[00m\]'
+PS1=$'\n\[\e[01;37m\]\xe2\x95\xad\xe2\x80\x95 [\[\e[01;32m\]\u@\h\[\e[01;37m\]]:[\[\e[01;34m\]\w\[\e[01;37m\]]
+\xe2\x95\xb0\xe2\x80\x95\xe2\x96\xba  \[\e[00m\]'
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:"
 export PATH="$PATH:~/bin:/opt/epics/base/bin/darwin-x86:/opt/epics/base/lib/darwin-x86"
 export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
