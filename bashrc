@@ -98,8 +98,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PS1='\n\[\e[01;37m\]╭─ [\[\e[01;32m\]\u@\h\[\e[01;37m\]]:[\[\e[01;34m\]\w\[\e[01;37m\]]
-╰─>  \[\e[00m\]'
+# unicode u+250c,u+2500 (upper), u+2514, u+2500 (lower)
+PS1=$'\n\[\e[01;37m\]\xe2\x94\x8c\xe2\x94\x80 [\[\e[01;32m\]\u@\h\[\e[01;37m\]]:[\[\e[01;34m\]\w\[\e[01;37m\]]
+\xe2\x94\x94\xe2\x94\x80>  \[\e[00m\]'
 export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
 export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/lib/epics/bin/linux-x86_64"
