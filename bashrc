@@ -121,9 +121,9 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 export EPICS_CA_MAX_ARRAY_BYTES=20000000
 
 # FRIB CTS proxies
-export http_proxy=http://webproxy.cts:3128
-export https_proxy=https://webproxy.cts:3128
-export no_proxy=localhost
+#export http_proxy=http://webproxy.cts:3128
+#export https_proxy=https://webproxy.cts:3128
+#export no_proxy=localhost
 
 # debian packaging nicities
 export DEBFULLNAME='Daron Chabot'
