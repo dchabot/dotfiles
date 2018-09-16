@@ -4,115 +4,146 @@
 
 #Host * will apply to all hosts
 Host *
-	  #Note default is 3
+	#Note default is 3
     ServerAliveCountMax 4
-		#Note default is 0       
+    #Note default is 0
     ServerAliveInterval 15      
-    User chabot
-    IdentityFile ~/.ssh/id_rsa_jessie_vbox
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa_yoga
 
 ####Port Forwarding Directives###
 
-### Note: "ssh" will cause DNS lookups to "ssh.bnl.gov" or "ssh.sec.bnl.local", depending on interface
 # Obviously, does not apply for msu access
+Host gw1
+    HostName nsclgw1.nscl.msu.edu
+    User chabot
+    ForwardAgent yes
+
 Host ctsgw
     HostName ctsgw.frib.msu.edu
+    User chabot
     ForwardAgent yes
+    ProxyCommand ssh -qY gw1 -W %h:%p
+    LocalForward 10001 localhost:4000
 
 Host stdioc
     HostName stdioc.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10002 localhost:4000
 
 Host stdioclog
     HostName stdioclog.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10003 localhost:4000
 
 Host isrc1-ioc
-    HostName fe-isrc1-ioc.cts
+    HostName fe-isrc1.ioc.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10004 localhost:4000
 
 Host chabot
     HostName chabot.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10005 localhost:4000
 
 Host scs1-ioc
     HostName fe-scs1.ioc.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10006 localhost:4000
 
 Host lebt-ioc
     HostName fe-lebt.ioc.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10007 localhost:4000
 
 Host rfq-ioc
     HostName fe-rfq.ioc.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10008 localhost:4000
 
 Host mebt-ioc
     HostName fe-mebt.ioc.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10009 localhost:4000
 
 Host csstudio
     HostName csstudio.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10010 localhost:22
 
 Host scs2-ioc
     HostName fe-scs2.ioc.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10011 localhost:4000
 
 Host fpsioc
     HostName fpsioc.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10012 localhost:4000
 
 Host chopper-mon
-    HostName  chopper-mon.cts
+    HostName chopper-mon.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10013 localhost:4000
 
-Host dev2
-    HostName dev02-hlc.nscl.msu.edu
+Host cagw-dmz
+    HostName cagateway-dmz.cts
+    User chabot
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10014 localhost:4000
+
+Host dev2
+    HostName dev02-hlc.nscl.msu.edu
+    User chabot
+    ForwardAgent yes
+    ProxyCommand ssh -qY gw1 -W %h:%p
     LocalForward 10201 localhost:4000
 
 Host nscl-deb
     HostName nsclgw1.nscl.msu.edu
+    User chabot
     ForwardAgent yes
     LocalForward localhost:10202 nsclmirror.nscl.msu.edu:80
 
 Host cts-deb
     HostName nsclgw1.nscl.msu.edu
+    User chabot
     ForwardAgent yes
     LocalForward localhost:10203 apt.hlc.nscl.msu.edu:80
 
-Host jenkins
+Host ci-deb
     HostName nsclgw1.nscl.msu.edu
+    User chabot
     ForwardAgent yes
     LocalForward localhost:10204 ci.frib.msu.edu:443
 
-Host frib-deb
+Host jenkins4
     HostName nsclgw1.nscl.msu.edu
+    User chabot
     ForwardAgent yes
-    LocalForward localhost:10205 ci.frib.msu.edu:80
+    LocalForward localhost:10205 jenkins4.nscl.msu.edu:80
