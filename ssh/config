@@ -21,11 +21,17 @@ Host ctsgw
     User chabot
     ForwardAgent yes
 
-Host vbox
+Host jessie
     Hostname localhost
     ForwardAgent yes
     User dc
     Port 2222
+
+Host stretch
+    Hostname localhost
+    ForwardAgent yes
+    User dc
+    Port 2223
 
 Host cagw-cts
     HostName cagw-cts.nscl.msu.edu
@@ -122,6 +128,13 @@ Host cagw-dmz
     ForwardAgent yes
     ProxyCommand ssh -qY ctsgw -W %h:%p
     LocalForward 10014 localhost:4000
+
+Host ops-ioc
+    HostName ops-ioc.cts
+    User chabot
+    ForwardAgent yes
+    ProxyCommand ssh -qY ctsgw -W %h:%p
+    LocalForward 10015 localhost:4000
 
 Host dev2
     HostName dev02-hlc.nscl.msu.edu
