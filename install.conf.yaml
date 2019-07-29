@@ -21,6 +21,7 @@
     ~/.ssh: ssh
     ~/.config/nvim: vim
     ~/.linuxbrew: linuxbrew
+    ~/.abcde.conf: abcde.conf
         
 - shell:
     - git submodule update --init --recursive fonts
