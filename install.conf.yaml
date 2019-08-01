@@ -22,6 +22,7 @@
     ~/.config/nvim: vim
     ~/.linuxbrew: linuxbrew
     ~/.abcde.conf: abcde.conf
+    ~/.cmus: cmus
         
 - shell:
     - git submodule update --init --recursive fonts
