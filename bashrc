@@ -132,6 +132,10 @@ export DEBEMAIL='daron.chabot@gmail.com'
 #export PAGER="/usr/bin/less"
 #export LESS='-R' #give 'less' some smarts...
 export EDITOR="/usr/bin/vim"
+
+# consequence of ancient SLAC infrastructure...
+unset SSH_ASKPASS
+
 # activate 'vi' mode
 set -o vi
 
