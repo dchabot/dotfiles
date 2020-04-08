@@ -11,18 +11,28 @@ Host *
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_rsa_xps
 
+Host *.slac.stanford.edu
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+
 ####Port Forwarding Directives###
 Host rhel6-64
     HostName rhel6-64.slac.stanford.edu
     User dchabot
     ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
 
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
+    ProxyCommand ssh -qY rhel6-64 -W %h:%p
     User dchabot
     ForwardAgent yes
-    ProxyCommand ssh -qY rhel6-64 -W %h:%p
-    LocalForward 10001 localhost:4000
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    #LocalForward 10001 localhost:4000
 
 #Host stdioc
 #    HostName stdioc.cts
