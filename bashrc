@@ -103,16 +103,16 @@ PS1=$'\n\[\e[01;37m\]\xe2\x94\x8c\xe2\x94\x80 [\[\e[01;32m\]\u@\h\[\e[01;37m\]]:
 \xe2\x94\x94\xe2\x94\x80>  \[\e[00m\]'
 export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 
-export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/lib/epics/bin/linux-x86_64"
+#export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/lib/epics/bin/linux-x86_64"
 # channelfinder, java crud
-export PATH="$HOME/java/bin:$PATH:$HOME/elasticsearch-1.7.5/bin:$HOME/glassfish4/bin"
-export PATH="$PATH:$HOME/apache-maven-3.3.9/bin"
-export JAVA_HOME="$HOME/java"
+#export PATH="$HOME/java/bin:$PATH:$HOME/elasticsearch-1.7.5/bin:$HOME/glassfish4/bin"
+#export PATH="$PATH:$HOME/apache-maven-3.3.9/bin"
+##export JAVA_HOME="$HOME/java"
 
 # linuxbrew
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+#export PATH="$HOME/.linuxbrew/bin:$PATH"
+#export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+#export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # EPICS
 #export EPICS_CA_AUTO_ADDR_LIST=NO
