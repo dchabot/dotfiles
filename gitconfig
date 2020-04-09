@@ -21,6 +21,3 @@
     slog = log --oneline -n10
     br = branch
     rem = remote -v
-
-[push]
-    default = simple
