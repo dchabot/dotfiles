@@ -115,6 +115,8 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 #export EPICS_CA_ADDR_LIST="`python $HOME/bin/get_ca_bcast_addr.py`"
 #export EPICS_CA_ADDR_LIST=127.0.0.1
 export EPICS_CA_MAX_ARRAY_BYTES=20000000
+export PATH="$HOME/src/epics-base/bin/linux-x86_64:$PATH"
+
 
 # FRIB CTS proxies
 #export http_proxy=http://webproxy.cts:3128
