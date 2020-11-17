@@ -106,16 +106,16 @@ export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin"
 
 # linuxbrew
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+#export PATH="$HOME/.linuxbrew/bin:$PATH"
+#export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+#export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # EPICS
 #export EPICS_CA_AUTO_ADDR_LIST=NO
 #export EPICS_CA_ADDR_LIST="`python $HOME/bin/get_ca_bcast_addr.py`"
 #export EPICS_CA_ADDR_LIST=127.0.0.1
 export EPICS_CA_MAX_ARRAY_BYTES=20000000
-export PATH="$HOME/src/epics-base/bin/linux-x86_64:$PATH"
+#export PATH="$HOME/src/epics-base/bin/linux-x86_64:$PATH"
 
 
 # FRIB CTS proxies
