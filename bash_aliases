@@ -1,7 +1,7 @@
 alias j="jobs"
 alias df="df -k"
 alias du="du -k"
-alias ls='ls --color'
+alias ls='ls -G'
 alias la="ls -a"
 alias ll="ls -l"
 alias vi=/usr/bin/vim
