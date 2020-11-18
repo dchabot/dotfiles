@@ -9,7 +9,7 @@ Host *
     #Note default is 0
     ServerAliveInterval 15      
     AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_rsa_xps
+    IdentityFile ~/.ssh/id_rsa_mbp
 
 Host *.slac.stanford.edu
     User dchabot
