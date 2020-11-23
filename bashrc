@@ -117,6 +117,8 @@ export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin"
 export EPICS_CA_MAX_ARRAY_BYTES=20000000
 export PATH="$HOME/src/epics-base/bin/darwin-x86:$PATH"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 
 # FRIB CTS proxies
 #export http_proxy=http://webproxy.cts:3128
