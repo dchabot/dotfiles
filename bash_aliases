@@ -10,3 +10,10 @@ alias grep="grep --color"
 alias outline="grep --color '^class \|def '"
 alias sa="conda activate"
 alias sd="conda deactivate"
+
+# USE GIT 2.18
+alias git=/afs/slac/g/lcls/package/git/2.18.0/rhel6-x86_64/bin/git
+# pydm dev environment
+alias devpydm='source $HOME/devpydm.bash'
+
+alias tmux=$HOME/.local/bin/tmux

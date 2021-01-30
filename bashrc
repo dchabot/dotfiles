@@ -120,11 +120,6 @@ export PROMPT_COMMAND='echo -ne "\033]0;`whoami`@`hostname -s`\007"'
 #export EPICS_CA_ADDR_LIST=127.0.0.1
 export EPICS_CA_MAX_ARRAY_BYTES=20000000
 
-# FRIB CTS proxies
-#export http_proxy=http://webproxy.cts:3128
-#export https_proxy=https://webproxy.cts:3128
-#export no_proxy=localhost
-
 # debian packaging nicities
 export DEBFULLNAME='Daron Chabot'
 export DEBEMAIL='daron.chabot@gmail.com'
@@ -135,9 +130,20 @@ export EDITOR="/usr/bin/vim"
 
 # consequence of ancient SLAC infrastructure...
 unset SSH_ASKPASS
+export PACKAGE_TOP=/afs/slac/g/lcls/package
+export REPOS=/afs/slac/g/cd/swe/git/repos/slac
 
 # activate 'vi' mode
 set -o vi
+
+# On lcls-dev3, RR's build of tmux 3.1 does not honor unicode
+# Can start as 'tmux -u', or use the following to workaround
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
+
+# Workaround for vim/tmux background color issue
+export TERM=screen-256color
+
 
 function tmux() {
     # update-env command addition from:
@@ -182,3 +188,19 @@ fel () {
 vgrep () {
     vim -q <(grep -RnH --exclude-dir=".git" $1 $2) +cw
 }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/u/cd/dchabot/mc/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/u/cd/dchabot/mc/etc/profile.d/conda.sh" ]; then
+        . "/u/cd/dchabot/mc/etc/profile.d/conda.sh"
+    else
+        export PATH="/u/cd/dchabot/mc/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
