@@ -144,6 +144,11 @@ export LANG=en_IN.UTF-8
 # Workaround for vim/tmux background color issue
 export TERM=screen-256color
 
+# Ensure this is in the non-interactive login path
+# eg: `ssh -qY dev3 -t 'tmux attach'`
+# I don't want the native tmux instance to be picked up from /usr/bin!
+export PATH="$HOME/.local/bin:$PATH"
+
 
 function tmux() {
     # update-env command addition from:

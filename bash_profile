@@ -17,8 +17,6 @@ case $HOSTNAME in
     source /afs/slac/g/lcls/tools/matlab/setup/matlabSetup64.bash
     source /afs/slac/g/lcls/physics/setup/physicsSetup.bash
     source /afs/slac/g/lcls/physics/setup/javaSetup64.bash
-
-    export PATH="$HOME/.local/bin:$PATH"
     ;;
 
 "lcls-dev2" )
