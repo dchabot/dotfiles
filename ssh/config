@@ -32,11 +32,47 @@ Host dev3
     ForwardAgent yes
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
-    #LocalForward 10001 localhost:4000
+    #LocalForward localhost:10001 localhost:5064
 
-#Host stdioc
-#    HostName stdioc.cts
-#    User chabot
-#    ForwardAgent yes
-#    ProxyCommand ssh -qY ctsgw -W %h:%p
-#    LocalForward 10002 localhost:4000
+Host prod_gw
+    HostName rhel6-64.slac.stanford.edu
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    LocalForward localhost:24742 lcls-prod01.slac.stanford.edu:5068
+
+Host dev5
+    HostName lcls-dev5.slac.stanford.edu
+    ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    #LocalForward 10002 localhost:4000
+
+Host mcclogin
+    HostName mcclogin.slac.stanford.edu
+    ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    #LocalForward 10003 localhost:4000
+
+Host srv01
+    HostName lcls-srv01.slac.stanford.edu
+    ProxyCommand ssh -qY mcclogin -W %h:%p
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    #LocalForward 10004 localhost:4000
+
+Host fastx3
+    HostName fastx3.slac.stanford.edu
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    #LocalForward 10005 localhost:4000
