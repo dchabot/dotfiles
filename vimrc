@@ -122,6 +122,7 @@ Plug 'junegunn/fzf.vim',
 Plug 'tpope/vim-fugitive'
 Plug 'rodjek/vim-puppet'
 Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
 
 
 " All of your Plugins must be added before the following line
@@ -145,6 +146,7 @@ colorscheme ir_black
 set number
 set cursorline
 hi CursorLine ctermbg=236
+
  
 " Ctrl-P setup:
 " -> r = nearest ancestor with repo directory
@@ -262,6 +264,16 @@ xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " recursively vimgrep for word under cursor or selection if you hit leader-star
 nmap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
 vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
+
+"""""""""" NerdTree config
+nnoremap <leader>t :NERDTreeToggle<CR>
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+"""""""""" end NerdTree cfg
 
 " Python folding
 " mkdir -p ~/.vim/ftplugin
