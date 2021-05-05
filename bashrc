@@ -149,6 +149,7 @@ export TERM=screen-256color
 # I don't want the native tmux instance to be picked up from /usr/bin!
 export PATH="$HOME/.local/bin:$PATH"
 
+export CVSEDITOR=vim
 
 function tmux() {
     # update-env command addition from:
