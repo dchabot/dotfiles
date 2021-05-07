@@ -9,14 +9,14 @@ case $HOSTNAME in
 "lcls-dev3" )
 
     # RHEL6-64
-    source /afs/slac/g/lcls/tools/script/ENVS.bash
-    source /afs/slac/g/lcls/epics/setup/epicsenv-7.0.3.1-1.0.bash
-    source $TOOLS/oracle/oracleSetup-R11.2.0.4.bash
-    export MATLAB_VER=2019a
-    export MLM_LICENSE_FILE="27010@license1,27010@license2,27010@license3"
-    source /afs/slac/g/lcls/tools/matlab/setup/matlabSetup64.bash
-    source /afs/slac/g/lcls/physics/setup/physicsSetup.bash
-    source /afs/slac/g/lcls/physics/setup/javaSetup64.bash
+    source /afs/slac/g/lcls/tools/script/ENVS64.bash
+#    source /afs/slac/g/lcls/epics/setup/epicsenv-7.0.3.1-1.0.bash
+#    source $TOOLS/oracle/oracleSetup-R11.2.0.4.bash
+#    export MATLAB_VER=2019a
+#    export MLM_LICENSE_FILE="27010@license1,27010@license2,27010@license3"
+#    source /afs/slac/g/lcls/tools/matlab/setup/matlabSetup64.bash
+#    source /afs/slac/g/lcls/physics/setup/physicsSetup.bash
+#    source /afs/slac/g/lcls/physics/setup/javaSetup64.bash
     ;;
 
 "lcls-dev2" )
