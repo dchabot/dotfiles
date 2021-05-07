@@ -16,7 +16,7 @@ Host gitlab.lbl.gov
     IdentityFile ~/.ssh/id_rsa_dev3
     IdentitiesOnly yes
 
-Host github
+Host github.com
     Hostname github.com
     IdentityFile ~/.ssh/id_rsa_dev3
     IdentitiesOnly yes
