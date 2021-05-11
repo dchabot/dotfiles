@@ -27,7 +27,8 @@ Host rhel6-64
 
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
-    ProxyCommand ssh -qY rhel6-64 -W %h:%p
+#    ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump rhel6-64
     User dchabot
     ForwardAgent yes
     GSSAPIAuthentication yes
@@ -53,7 +54,8 @@ Host dev5
 
 Host mcclogin
     HostName mcclogin.slac.stanford.edu
-    ProxyCommand ssh -qY rhel6-64 -W %h:%p
+#    ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump rhel6-64
     User dchabot
     ForwardAgent yes
     GSSAPIAuthentication yes
@@ -63,6 +65,25 @@ Host mcclogin
 Host srv01
     HostName lcls-srv01.slac.stanford.edu
     ProxyCommand ssh -qY mcclogin -W %h:%p
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    #LocalForward 10004 localhost:4000
+
+Host srv05
+    HostName lcls-srv05.slac.stanford.edu
+    ProxyCommand ssh -qY mcclogin -W %h:%p
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    #LocalForward 10004 localhost:4000
+
+Host ldap-test
+    HostName ldap-test.slac.stanford.edu
+#    ProxyCommand ssh -qY mcclogin -W %h:%p
+    ProxyJump mcclogin
     User dchabot
     ForwardAgent yes
     GSSAPIAuthentication yes
