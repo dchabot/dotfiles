@@ -151,6 +151,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export CVSEDITOR=vim
 
+function tmux_fix_display() {
+    # From https://goosbearingbashshell.github.io/2017/12/07/reset-display-variable-in-tmux.html
+    export DISPLAY="`tmux show-env / sed -n 's/^DISPLAY=//p'`"
+}
+
 function tmux() {
     # update-env command addition from:
     # https://raim.codingfarm.de/blog/2013/01/30/tmux-update-environment/
