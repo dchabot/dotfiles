@@ -115,7 +115,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 Plug 'yssl/QFEnter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim',
@@ -220,14 +220,14 @@ nnoremap <silent> <Leader>b :Buffers<CR>
 " " git clone git://github.com/davidhalter/jedi-vim.git
 " let g:jedi#auto_initialization = 0
 " let g:jedi#force_py_version = 3
-let g:jedi#goto_assignments_command = "<Leader>a"
-let g:jedi#goto_definitions_command = "<Leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<Leader>u"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<Leader>r"
+"let g:jedi#goto_assignments_command = "<Leader>a"
+"let g:jedi#goto_definitions_command = "<Leader>d"
+"let g:jedi#documentation_command = "K"
+"let g:jedi#usages_command = "<Leader>u"
+"let g:jedi#completions_command = "<C-Space>"
+"let g:jedi#rename_command = "<Leader>r"
 " let g:jedi#completions_enabled = 0
-let g:jedi#popup_on_dot = 0
+"let g:jedi#popup_on_dot = 0
 " let g:jedi#popup_select_first = 0
 " let g:jedi#show_call_sigatures = 0
 " map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
