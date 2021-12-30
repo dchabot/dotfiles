@@ -212,6 +212,7 @@ command! -bang -nargs=* Ag
 \                 <bang>0)
 
 nnoremap <leader>g :Ag<cr>
+nnoremap <silent> <Leader>b :Buffers<CR>
 
 " Settings for jedi-vim
 " " cd ~/.vim/bundle
@@ -228,7 +229,7 @@ let g:jedi#rename_command = "<Leader>r"
 let g:jedi#popup_on_dot = 0
 " let g:jedi#popup_select_first = 0
 " let g:jedi#show_call_sigatures = 0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " " Better navigating through omnicomplete option list
 " " See
@@ -270,8 +271,8 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 " Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
+"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+"    \ quit | endif
 """""""""" end NerdTree cfg
 
 " Python folding
