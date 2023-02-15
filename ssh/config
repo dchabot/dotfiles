@@ -11,125 +11,85 @@ Host *
     IPQoS reliability
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_rsa_mbp
+    XAuthLocation /opt/X11/bin/xauth
+
+Host mohs
+    HostName mohs.dhcp.lbl.gov
+    ForwardAgent yes
+    User mohs
 
 Host *.slac.stanford.edu
     User dchabot
     ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
+    HostKeyAlgorithms=+ssh-rsa
+    PubkeyAcceptedKeyTypes=+ssh-rsa
 
 ####Port Forwarding Directives###
 Host rhel6-64
     HostName rhel6-64.slac.stanford.edu
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
 
 Host centos7
     HostName centos7.slac.stanford.edu
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
 
 Host iris
     HostName iris.slac.stanford.edu
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
 
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
-#    ProxyCommand ssh -qY rhel6-64 -W %h:%p
-#    ProxyJump rhel6-64
+    HostKeyAlgorithms=+ssh-rsa
+    PubkeyAcceptedKeyTypes=+ssh-rsa
+#   ProxyCommand ssh -qY rhel6-64 -W %h:%p
+#   ProxyJump rhel6-64
+#   ProxyJump iris
     ProxyJump centos7
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
-#    LocalForward localhost:10001 localhost:5066
+
+Host aosd
+    HostName centos7.slac.stanford.edu
+    LocalForward localhost:8081 aosd.slac.stanford.edu:443
 
 Host dev_local
     HostName rhel6-64.slac.stanford.edu
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     LocalForward localhost:10001 lcls-dev3.slac.stanford.edu:10002
 
 Host prod_gw
     HostName rhel6-64.slac.stanford.edu
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     LocalForward localhost:24742 lcls-prod01.slac.stanford.edu:5068
 
 Host dev5
     HostName lcls-dev5.slac.stanford.edu
     ProxyCommand ssh -qY rhel6-64 -W %h:%p
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     #LocalForward 10002 localhost:4000
 
 Host mcclogin
     HostName mcclogin.slac.stanford.edu
 #    ProxyCommand ssh -qY rhel6-64 -W %h:%p
     ProxyJump rhel6-64
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     #LocalForward 10003 localhost:4000
 
 Host srv01
     HostName lcls-srv01.slac.stanford.edu
     #ProxyCommand ssh -qY mcclogin -W %h:%p
     ProxyJump mcclogin
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     #LocalForward 10004 localhost:4000
 
 Host srv05
     HostName lcls-srv05.slac.stanford.edu
     ProxyCommand ssh -qY mcclogin -W %h:%p
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     #LocalForward 10004 localhost:4000
 
 Host ldap-test
     HostName ldap-test.slac.stanford.edu
 #    ProxyCommand ssh -qY mcclogin -W %h:%p
     ProxyJump mcclogin
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     #LocalForward 10004 localhost:4000
 
 Host fastx3
     HostName fastx3.slac.stanford.edu
-    User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     #LocalForward 10005 localhost:4000
 
 Host nx
     HostName nx.slac.stanford.edu
     User dchabot
-    ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
-    #LocalForward 10005 localhost:4000
 
 Host gitlab.lbl.gov
     Hostname gitlab.lbl.gov
