@@ -22,21 +22,33 @@ Host rhel6-64
     HostName rhel6-64.slac.stanford.edu
     User dchabot
     ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
+
+Host centos7
+    HostName centos7.slac.stanford.edu
+    User dchabot
+    ForwardAgent yes
 
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
-    ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    #KexAlgorithms +diffie-hellman-group1-sha1
+    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump centos7
     User dchabot
     ForwardAgent yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
     #LocalForward 10001 localhost:4000
 
-#Host stdioc
-#    HostName stdioc.cts
-#    User chabot
-#    ForwardAgent yes
-#    ProxyCommand ssh -qY ctsgw -W %h:%p
-#    LocalForward 10002 localhost:4000
+Host mcclogin
+    HostName mcclogin.slac.stanford.edu
+    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump centos7
+    User dchabot
+    ForwardAgent yes
+    #LocalForward 10001 localhost:4000
+
+Host ldap-test
+    HostName ldap-test.slac.stanford.edu
+    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump mcclogin
+    User dchabot
+    ForwardAgent yes
+    #LocalForward 10001 localhost:4000
