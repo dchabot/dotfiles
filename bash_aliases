@@ -7,7 +7,7 @@ alias ll="ls -l"
 alias vi=/usr/bin/vim
 #alias vim=/usr/bin/nvim
 alias grep="grep --color"
-alias outline="grep --color '^class \|def '"
+alias outline="grep -n --color '^class \|def '"
 alias sa="conda activate"
 alias sd="conda deactivate"
 
