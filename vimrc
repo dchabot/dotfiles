@@ -70,6 +70,9 @@ map <C-l> <C-W>l
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
+" better, intuitive select (copy) / paste behavior. See SO 3837772.
+vnoremap p "_dP
+
 " open vsplits to the right
 set splitright
 
@@ -214,6 +217,7 @@ command! -bang -nargs=* Ag
 
 nnoremap <leader>g :Ag<cr>
 nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <leader>q q:
 
 " Settings for jedi-vim
 " " cd ~/.vim/bundle

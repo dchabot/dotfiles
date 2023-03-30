@@ -21,18 +21,14 @@ Host github.com
     IdentityFile ~/.ssh/id_rsa_dev3
     IdentitiesOnly yes
 
-#Host gw1
-#    HostName nsclgw1.nscl.msu.edu
-#    User chabot
-#    ForwardAgent yes
-#
-#Host ctsgw
-#    HostName ctsgw.frib.msu.edu
-#    User chabot
-#    ForwardAgent yes
-#    ProxyCommand ssh -qY gw1 -W %h:%p
-#    LocalForward 10001 localhost:4000
-#
+Host mcclogin
+    Hostname mcclogin.slac.stanford.edu
+
+Host ldap-test
+    Hostname ldap-test.slac.stanford.edu
+    ProxyCommand ssh -qY mcclogin -W %h:%p
+#    LocalForward 10002 localhost:4000
+
 #Host stdioc
 #    HostName stdioc.cts
 #    User chabot
