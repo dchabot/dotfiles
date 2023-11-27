@@ -9,7 +9,7 @@ Host *
     #Note default is 0
     ServerAliveInterval 15      
     AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_rsa_xps
+    IdentityFile ~/.ssh/id_rsa_air
 
 Host *.slac.stanford.edu
     User dchabot
@@ -29,6 +29,13 @@ Host centos7
     ForwardAgent yes
     LocalForward 10001 localhost:8080
 
+Host centos7
+    HostName centos7.slac.stanford.edu
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
     #KexAlgorithms +diffie-hellman-group1-sha1
@@ -40,8 +47,6 @@ Host dev3
 
 Host dev-rhel7
     HostName dev-rhel7.slac.stanford.edu
-    #KexAlgorithms +diffie-hellman-group1-sha1
-    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -49,8 +54,6 @@ Host dev-rhel7
 
 Host icd-pc85872 
     HostName icd-pc85872.slac.stanford.edu
-    #KexAlgorithms +diffie-hellman-group1-sha1
-    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -58,8 +61,6 @@ Host icd-pc85872
 
 Host pc89055
     HostName 134.79.216.85
-    #KexAlgorithms +diffie-hellman-group1-sha1
-    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -67,8 +68,6 @@ Host pc89055
 
 Host esd-pc80849 
     HostName esd-pc80849.slac.stanford.edu
-    #KexAlgorithms +diffie-hellman-group1-sha1
-    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -76,7 +75,6 @@ Host esd-pc80849
 
 Host mcclogin
     HostName mcclogin.slac.stanford.edu
-    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -84,7 +82,6 @@ Host mcclogin
 
 Host ldap-test
     HostName ldap-test.slac.stanford.edu
-    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
     ProxyJump mcclogin
     User dchabot
     ForwardAgent yes

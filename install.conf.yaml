@@ -7,8 +7,7 @@
   
 - link:
     ~/.dotfiles: ''
-    ~/.bashrc: bashrc
-    ~/.bash_aliases: bash_aliases
+    ~/.zshrc: zshrc
     ~/.hgrc: hgrc
     ~/.gitconfig: gitconfig
     ~/.gbp.conf: gbp.conf
