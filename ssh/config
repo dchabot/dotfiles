@@ -27,9 +27,46 @@ Host centos7
     HostName centos7.slac.stanford.edu
     User dchabot
     ForwardAgent yes
+    LocalForward 10001 localhost:8080
 
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
+    #KexAlgorithms +diffie-hellman-group1-sha1
+    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump centos7
+    User dchabot
+    ForwardAgent yes
+    #LocalForward 10001 localhost:4000
+
+Host dev-rhel7
+    HostName dev-rhel7.slac.stanford.edu
+    #KexAlgorithms +diffie-hellman-group1-sha1
+    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump centos7
+    User dchabot
+    ForwardAgent yes
+    #LocalForward 10001 localhost:4000
+
+Host icd-pc85872 
+    HostName icd-pc85872.slac.stanford.edu
+    #KexAlgorithms +diffie-hellman-group1-sha1
+    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump centos7
+    User dchabot
+    ForwardAgent yes
+    #LocalForward 10001 localhost:4000
+
+Host pc89055
+    HostName 134.79.216.85
+    #KexAlgorithms +diffie-hellman-group1-sha1
+    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    ProxyJump centos7
+    User dchabot
+    ForwardAgent yes
+    #LocalForward 10001 localhost:4000
+
+Host esd-pc80849 
+    HostName esd-pc80849.slac.stanford.edu
     #KexAlgorithms +diffie-hellman-group1-sha1
     #ProxyCommand ssh -qY rhel6-64 -W %h:%p
     ProxyJump centos7
@@ -51,4 +88,8 @@ Host ldap-test
     ProxyJump mcclogin
     User dchabot
     ForwardAgent yes
-    #LocalForward 10001 localhost:4000
+
+Host fastx3
+    HostName fastx3.slac.stanford.edu
+    User dchabot
+    ForwardAgent yes
