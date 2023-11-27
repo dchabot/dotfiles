@@ -18,11 +18,6 @@ Host *.slac.stanford.edu
     GSSAPIDelegateCredentials yes
 
 ####Port Forwarding Directives###
-Host rhel6-64
-    HostName rhel6-64.slac.stanford.edu
-    User dchabot
-    ForwardAgent yes
-
 Host centos7
     HostName centos7.slac.stanford.edu
     User dchabot
@@ -38,8 +33,8 @@ Host centos7
 
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
-    #KexAlgorithms +diffie-hellman-group1-sha1
-    #ProxyCommand ssh -qY rhel6-64 -W %h:%p
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -54,6 +49,8 @@ Host dev-rhel7
 
 Host icd-pc85872 
     HostName icd-pc85872.slac.stanford.edu
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -61,6 +58,8 @@ Host icd-pc85872
 
 Host pc89055
     HostName 134.79.216.85
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -68,6 +67,8 @@ Host pc89055
 
 Host esd-pc80849 
     HostName esd-pc80849.slac.stanford.edu
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
@@ -75,6 +76,8 @@ Host esd-pc80849
 
 Host mcclogin
     HostName mcclogin.slac.stanford.edu
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
     ProxyJump centos7
     User dchabot
     ForwardAgent yes
