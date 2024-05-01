@@ -18,11 +18,12 @@ Host *.slac.stanford.edu
     GSSAPIDelegateCredentials yes
 
 ####Port Forwarding Directives###
-Host centos7
-    HostName centos7.slac.stanford.edu
+Host s3dflogin
+    HostName s3dflogin.slac.stanford.edu
     User dchabot
     ForwardAgent yes
-    LocalForward 10001 localhost:8080
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
 
 Host centos7
     HostName centos7.slac.stanford.edu
@@ -31,20 +32,33 @@ Host centos7
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
 
+Host jump
+    HostName jump.slac.stanford.edu
+    User dchabot
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
+    ProxyJump centos7
+    User dchabot
     HostKeyAlgorithms +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
-    ProxyJump centos7
-    User dchabot
     ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
     #LocalForward 10001 localhost:4000
 
-Host dev-rhel7
-    HostName dev-rhel7.slac.stanford.edu
-    ProxyJump centos7
+Host iana
+    HostName iana.sdf.slac.stanford.edu
+    ProxyJump s3dflogin
     User dchabot
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
     ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
     #LocalForward 10001 localhost:4000
 
 Host icd-pc85872 
