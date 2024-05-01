@@ -102,3 +102,5 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.bash_aliases
 set -o vi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
