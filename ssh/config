@@ -36,12 +36,14 @@ Host jump
     HostName jump.slac.stanford.edu
     User dchabot
     ForwardAgent yes
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
 
 Host dev3
     HostName lcls-dev3.slac.stanford.edu
-    ProxyJump centos7
+    ProxyJump jump
     User dchabot
     HostKeyAlgorithms +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
