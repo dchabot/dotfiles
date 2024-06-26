@@ -109,3 +109,8 @@ Host fastx3
     HostName fastx3.slac.stanford.edu
     User dchabot
     ForwardAgent yes
+
+Host xps
+    HostName xps.local
+    User dc
+    ForwardAgent yes
