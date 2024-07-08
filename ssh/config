@@ -114,3 +114,8 @@ Host xps
     HostName xps.local
     User dc
     ForwardAgent yes
+
+Host cpu-b15-rf02
+    Hostname cpu-b15-rf02.slac.stanford.edu
+    User laci
+    ProxyJump jump
