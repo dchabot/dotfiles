@@ -104,3 +104,5 @@ source $HOME/.bash_aliases
 set -o vi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=$HOME/mc/bin:$PATH
