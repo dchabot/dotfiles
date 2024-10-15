@@ -105,8 +105,8 @@ Host ldap-test
     User dchabot
     ForwardAgent yes
 
-Host fastx3
-    HostName fastx3.slac.stanford.edu
+Host fastx
+    HostName fastx.slac.stanford.edu
     User dchabot
     ForwardAgent yes
 
