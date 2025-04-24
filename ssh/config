@@ -52,6 +52,17 @@ Host dev3
     GSSAPIDelegateCredentials yes
     #LocalForward 10001 localhost:4000
 
+Host dev-epicsgw
+    HostName dev-epicsgw.slac.stanford.edu
+    ProxyJump jump
+    User dchabot
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    #LocalForward 10001 localhost:4000
+
 Host iana
     HostName iana.sdf.slac.stanford.edu
     ProxyJump s3dflogin
@@ -67,7 +78,7 @@ Host icd-pc85872
     HostName icd-pc85872.slac.stanford.edu
     HostKeyAlgorithms +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
-    ProxyJump centos7
+    ProxyJump jump
     User dchabot
     ForwardAgent yes
     #LocalForward 10001 localhost:4000
@@ -76,7 +87,7 @@ Host pc89055
     HostName 134.79.216.85
     HostKeyAlgorithms +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
-    ProxyJump centos7
+    ProxyJump jump
     User dchabot
     ForwardAgent yes
     #LocalForward 10001 localhost:4000
@@ -85,7 +96,7 @@ Host esd-pc80849
     HostName esd-pc80849.slac.stanford.edu
     HostKeyAlgorithms +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
-    ProxyJump centos7
+    ProxyJump jump
     User dchabot
     ForwardAgent yes
     #LocalForward 10001 localhost:4000
@@ -94,7 +105,7 @@ Host mcclogin
     HostName mcclogin.slac.stanford.edu
     HostKeyAlgorithms +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
-    ProxyJump centos7
+    ProxyJump jump
     User dchabot
     ForwardAgent yes
     #LocalForward 10001 localhost:4000
@@ -119,3 +130,21 @@ Host cpu-b15-rf02
     Hostname cpu-b15-rf02.slac.stanford.edu
     User laci
     ProxyJump jump
+
+Host dev-srv09
+    HostName dev-srv09.slac.stanford.edu
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    ProxyJump jump
+    User dchabot
+    ForwardAgent yes
+    #LocalForward 10001 localhost:4000
+
+Host dev-b15srv
+    HostName dev-b15srv.slac.stanford.edu
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    ProxyJump jump
+    User dchabot
+    ForwardAgent yes
+    #LocalForward 10001 localhost:4000
