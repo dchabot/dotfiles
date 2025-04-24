@@ -29,3 +29,5 @@
     - git submodule update --init --recursive tmux/plugins/tpm
     - tmux source ~/.tmux.conf
     - git submodule update --init --recursive linuxbrew
+    - git submodule update --init --recursive the_silver_searcher
+    - cd the_silver_searcher && ./build.sh --prefix=~/.local && make install
