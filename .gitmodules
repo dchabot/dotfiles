@@ -10,6 +10,6 @@
 [submodule "linuxbrew"]
 	path = linuxbrew
 	url = https://github.com/linuxbrew/brew.git
-[submdule "the_silver_searcher"]
-    path = the_silver_surfer
-    url = https://github.com/ggreer/the_silver_searcher.git
+[submodule "the_silver_searcher"]
+	path = the_silver_searcher
+	url = https://github.com/ggreer/the_silver_searcher.git

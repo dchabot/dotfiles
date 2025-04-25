@@ -30,4 +30,4 @@
     - tmux source ~/.tmux.conf
     - git submodule update --init --recursive linuxbrew
     - git submodule update --init --recursive the_silver_searcher
-    - cd the_silver_searcher && ./build.sh --prefix=~/.local && make install
+    - cd the_silver_searcher && ./build.sh --prefix=$HOME/.local && make install
