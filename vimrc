@@ -213,6 +213,7 @@ command! -bang -nargs=* Ag
 
 nnoremap <leader>g :Ag<cr>
 nnoremap <silent> <Leader>b :Buffers<CR>
+noremap <leader>c :History:<cr>
 
 " Settings for jedi-vim
 " " cd ~/.vim/bundle
